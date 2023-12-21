@@ -60,7 +60,6 @@ echo
 echo "Password :  $PASSWORD"
 echo
 echo "Host_Name : $hostname
-
 # command to print all the users in linux
 # cat /etc/passwd | cut -d: -f1
 # cat /etc/passwd | awk -F : '{print $1}'- I tried this with the practicee of awk
