@@ -40,7 +40,7 @@ then
     exit 1
 fi
 #Step 8: Assign Password to user
-echo "$PASSWORD" | passwd "$USER_NAME"
+echo "$PASSWORD" | passwd --stdin "$USER_NAME" 
 # step 9: Check whether password assigned to user
 if [[ ${?} -ne 0 ]]
 then
@@ -60,6 +60,7 @@ echo
 echo "Password :  $PASSWORD"
 echo
 echo "Host_Name : $hostname
+
 # command to print all the users in linux
 # cat /etc/passwd | cut -d: -f1
 # cat /etc/passwd | awk -F : '{print $1}'- I tried this with the practicee of awk
