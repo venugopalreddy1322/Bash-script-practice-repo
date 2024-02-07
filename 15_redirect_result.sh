@@ -5,7 +5,7 @@ pwd > ./demo.txt here result will be sent to given file
 
 #pwd  this command prints the path on terminal
 
-ls >> ./demo.txt #append to the esisting text
+ls -ltr >> ./demo.txt #append to the esisting text
 
 ##############################
 

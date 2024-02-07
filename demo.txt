@@ -1,0 +1,25 @@
+/c/Users/venug/learnlinux/Bash-script-practice
+total 31
+-rwxr-xr-x 1 venug 197610 288 Dec 13 23:04 01_variables.sh
+-rwxr-xr-x 1 venug 197610 687 Dec 13 23:44 02_array.sh
+-rwxr-xr-x 1 venug 197610 214 Dec 13 23:56 03_array_key_value.sh
+-rwxr-xr-x 1 venug 197610 621 Dec 14 00:23 04_stringoperations.sh
+-rwxr-xr-x 1 venug 197610 187 Dec 15 11:31 05_user_inputvalue.sh
+-rwxr-xr-x 1 venug 197610 370 Dec 15 19:05 07_if-else.sh
+-rwxr-xr-x 1 venug 197610 355 Dec 15 19:55 08_case-operator.sh
+-rwxr-xr-x 1 venug 197610 444 Dec 15 21:39 09_logical-operator.sh
+-rwxr-xr-x 1 venug 197610 172 Dec 15 21:50 10_forloop1.sh
+-rwxr-xr-x 1 venug 197610 551 Dec 15 22:53 11_whileloop.sh
+-rw-r--r-- 1 venug 197610  68 Dec 15 23:06 employee.txt
+-rwxr-xr-x 1 venug 197610 601 Dec 15 23:08 10_forloop-file.sh
+-rw-r--r-- 1 venug 197610  77 Dec 17 14:31 test.csv
+-rwxr-xr-x 1 venug 197610 200 Dec 17 14:35 11_while-csvfile-read.sh
+-rwxr-xr-x 1 venug 197610 193 Dec 17 14:47 12_awk_csv_while-loop.sh
+-rwxr-xr-x 1 venug 197610 270 Dec 19 11:05 13_connection_check.sh
+-rwxr-xr-x 1 venug 197610 242 Dec 19 11:37 14_file_status.sh
+-rw-r--r-- 1 venug 197610   0 Dec 21 18:45 sample.txt
+-rwxr-xr-x 1 venug 197610 205 Feb  6 00:51 grep-awk-commands.sh
+-rwxr-xr-x 1 venug 197610 249 Feb  6 00:51 06_arithmetic.sh
+drwxr-xr-x 1 venug 197610   0 Feb  6 00:51 projects-shellscript
+-rwxr-xr-x 1 venug 197610 344 Feb  7 04:53 15_redirect_result.sh
+-rw-r--r-- 1 venug 197610  47 Feb  7 04:53 demo.txt
