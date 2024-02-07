@@ -1,5 +1,10 @@
+##########################################################################
+
+# shell script to create a new user assign a pssword to him and force to change password on 1st login
+
+# #########################################################################
+
 #!/bin/bash
-# creating user, assigning password, must change password for 1st login
 set -x
 #step1: script should be executed by root user or sudo access
 if [[ ${UID} -ne 0 ]]  # root or sudo UID=0
@@ -18,29 +23,31 @@ fi
 
 # Step3: Take 1st arguement as username
 USER_NAME=${1}
-#echo "Username is:  $USER_NAME"
 
 # step4: If there are more than one arguement treat them as comments
 shift            # shift will exclude the 1st arguement
-COMMENT="${@}"   # after SHIFT excluded, the rest of comments
+COMMENTS="${@}"   # after SHIFT excluded, the rest of comments
                  # ${@}-- all arguements
 
 # Step 5: create random password
 
 PASSWORD=$(date +%S%p%N%Z)  # %S%p%N%Z-- just picked from date syntax to generate random password
-#echo " $PASSWORD"
 
-# Step 6: Create USER
-useradd -c " ${COMMENT} " -m $USER_NAME
-
-#Step 7: check whether USER created or not
-if [[ ${?} -ne 0 ]]  # ${?}=0 if previous command executed sucessfuly
-then
-    echo "User not created "
-    exit 1
+# Step 6: Create USER, if not already exist
+if ! id "$USER_NAME" &>/dev/null; then
+useradd -c "${COMMENTS}" -m $USER_NAME
+else
+        echo "$USER_NAME user Already exist"
+        exit 1
 fi
+#Step 7: check whether USER created or not
+#if [[ ${?} -ne 0 ]]  # ${?}=0 if previous command executed sucessfuly
+#then
+#    echo "User not created "
+#    exit 1
+#fi
 #Step 8: Assign Password to user
-echo "$PASSWORD" | passwd --stdin "$USER_NAME" 
+echo "$USER_NAME:$PASSWORD" |  chpasswd
 # step 9: Check whether password assigned to user
 if [[ ${?} -ne 0 ]]
 then
@@ -59,8 +66,10 @@ echo "Comments are : ${COMMENTS}"
 echo
 echo "Password :  $PASSWORD"
 echo
-echo "Host_Name : $hostname
-
+echo "Host_Name : $(hostname) "
+echo "#######################################"
 # command to print all the users in linux
-# cat /etc/passwd | cut -d: -f1
+echo "List of last 5 Users in this system "
+cat /etc/passwd | tail -5 | cut -d: -f1
 # cat /etc/passwd | awk -F : '{print $1}'- I tried this with the practicee of awk
+
