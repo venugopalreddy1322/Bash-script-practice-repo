@@ -33,6 +33,9 @@ for log_file in $LOG_DIR/*.log; do
     fi
 done
 # Compress/zip logs in the backup directory.
-echo "Compressing log files in Backup Directory"
-zgip $BACKUP_DIR/*.log
-echo "Done with Compression"
+if ls $BACKUP_DIR/*.log 1> /dev/null 2>&1; then
+    echo "Compressing log files in Backup Directory"
+    zgip $BACKUP_DIR/*.log
+    echo "Done with Compression"
+else
+    echo "No logs to Compress"
