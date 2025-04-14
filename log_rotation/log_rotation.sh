@@ -32,3 +32,4 @@ for log_file in $LOG_DIR/*.log; do
         echo "Ignored $log_file as it is Directory"
     fi
 done
+# Compress/zip logs in the backup directory.
