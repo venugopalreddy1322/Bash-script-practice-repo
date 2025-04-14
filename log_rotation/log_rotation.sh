@@ -25,6 +25,9 @@ for log_file in $LOG_DIR/*.log; do
         base_name=$(basename $log_file)
         timestamp=$(date +'%Y%m%d_%H%M%S')
         echo $timestamp
+        # Update the log file name with timestamp
+        backup_file="$base_name-$timestamp"
+        echo $backup_file
     else
         echo "Ignored $log_file as it is Directory"
     fi
