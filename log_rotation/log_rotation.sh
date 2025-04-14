@@ -5,8 +5,9 @@
 
 # Check the logs directory exists?, and if not throw an error
 LOG_DIR=logs
+# read -rp "Enter the log directory path: " LOG_DIR
 BACKUP_DIR=backup
-RETENSION_DAYS=1
+RETENTION_DAYS=1
 if [[ -d $LOG_DIR ]]; then
     echo "Logs directory($LOG_DIR) exists"
 else
@@ -41,6 +42,6 @@ if ls $BACKUP_DIR/*.log 1> /dev/null 2>&1; then
 else
     echo "No logs to Compress"
 # Clean up old logs that are older than a certain number of minute(s).
-echo "Cleaning up backup logs older than $RETENSION_DAYS Minute(s)..."
-find $BACKUP_DIR -type f -name "*.gz" -mmin +$RETENSION_DAYS -exec rm -f {} \;
+echo "Cleaning up backup logs older than $RETENTION_DAYS Day(s)..."
+find $BACKUP_DIR -type f -name "*.gz" -mtime +$RETENTION_DAYS -exec rm -f {} \; #use -mmin for testing
 echo "Log Rotation completed Successfully .."  
