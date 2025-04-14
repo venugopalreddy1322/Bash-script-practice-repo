@@ -20,8 +20,9 @@ mkdir -p $BACKUP_DIR
 ## Iterate through each file in logs directory
 for log_file in $LOG_DIR/*.log; do
     if [[ -f $log_file ]]; then
-        echo $log_file
+        #echo $log_file
         # basename command extracts filename from path
+        base_name=$(basename $log_file)
     else
         echo "Ignored $log_file as it is Directory"
     fi
