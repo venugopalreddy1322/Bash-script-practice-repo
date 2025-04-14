@@ -15,3 +15,9 @@ fi
 
 # Create the Backup directory if it doesn't exist
 mkdir -p $BACKUP_DIR
+
+# Rotate logs - get log files from the logs directory, append a timestamp, and move them to 
+## Iterate through each file in logs directory
+for log_file in $LOG_DIR/*.log; do
+    echo $log_file
+done
