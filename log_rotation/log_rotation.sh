@@ -16,10 +16,13 @@ fi
 # Create the Backup directory if it doesn't exist
 mkdir -p $BACKUP_DIR
 
-# Rotate logs - get log files from the logs directory, append a timestamp, and move them to 
+# Rotate logs - get log files from the logs directory, append a timestamp, and move them to Backup directory
 ## Iterate through each file in logs directory
 for log_file in $LOG_DIR/*.log; do
     if [[ -f $log_file ]]; then
         echo $log_file
+        # basename command extracts filename from path
+    else
+        echo "Ignored $log_file as it is Directory"
     fi
 done
