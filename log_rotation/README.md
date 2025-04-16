@@ -14,7 +14,7 @@ This Bash script is designed to:
 
 ## 📂 Directory Structure
 
-By default, the script expects the following:
+By default(For demo purpose), the script expects the following:
 
 ```
 .
